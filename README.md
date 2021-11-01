@@ -2,7 +2,7 @@
 
 ## The Walkthrough Video
 
-![](walkthrough.mov)
+https://user-images.githubusercontent.com/747910/139613707-787908ba-3816-4979-aa08-8cd044beac77.mov
 
 ## Random notes below
 
