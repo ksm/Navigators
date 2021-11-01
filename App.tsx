@@ -12,9 +12,6 @@ const styles = StyleSheet.create({
   },
 });
 
-const KYCStack = createStackNavigator();
-const CardOnboardingStack = createStackNavigator();
-
 const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.screen}>
