@@ -1,53 +1,18 @@
 import React from 'react';
-import {View, StyleSheet, Text, Button} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'turquoise',
-  },
-});
+import {PhoneVerificationNavigator} from './PhoneVerification';
+import {KYCNavigator} from './KYC';
 
 const OnboardingStack = createStackNavigator();
 
-const OnboardingOneScreen = ({navigation}) => {
-  return (
-    <View style={styles.screen}>
-      <Text>First Onboarding Screen</Text>
-      <Button
-        title="Continue onboarding..."
-        onPress={() => navigation.navigate('OnboardingTwo')}
-      />
-    </View>
-  );
-};
-
-const OnboardingTwoScreen = ({navigation}) => {
-  return (
-    <View style={styles.screen}>
-      <Text>Second Onboarding Screen</Text>
-      <Button
-        title="Finish onboarding and go to KYC"
-        onPress={() => navigation.replace('KYC')}
-      />
-    </View>
-  );
-};
-
 export const OnboardingNavigator = () => {
   return (
-    <OnboardingStack.Navigator>
+    <OnboardingStack.Navigator screenOptions={{headerShown: false}}>
       <OnboardingStack.Screen
-        name="OnboardingOne"
-        component={OnboardingOneScreen}
+        name="PhoneVerification"
+        component={PhoneVerificationNavigator}
       />
-      <OnboardingStack.Screen
-        name="OnboardingTwo"
-        component={OnboardingTwoScreen}
-      />
+      <OnboardingStack.Screen name="KYC" component={KYCNavigator} />
     </OnboardingStack.Navigator>
   );
 };

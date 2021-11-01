@@ -39,7 +39,7 @@ const KYCTwoScreen = ({navigation}) => {
 
 export const KYCNavigator = () => {
   return (
-    <KYCStack.Navigator>
+    <KYCStack.Navigator screenOptions={{title: 'KYC'}}>
       <KYCStack.Screen name="KYCOne" component={KYCOneScreen} />
       <KYCStack.Screen name="KYCTwo" component={KYCTwoScreen} />
     </KYCStack.Navigator>
