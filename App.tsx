@@ -1,31 +1,30 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {OnboardingNavigator} from './src/Onboarding';
+import {KYCNavigator} from './src/KYC';
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  screen: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
-const HomeScreen = () => {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-};
+const KYCStack = createStackNavigator();
+const CardOnboardingStack = createStackNavigator();
 
-const Stack = createStackNavigator();
+const AppStack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
+      <AppStack.Navigator screenOptions={{headerShown: false}}>
+        <AppStack.Screen name="Onboarding" component={OnboardingNavigator} />
+        <AppStack.Screen name="KYC" component={KYCNavigator} />
+      </AppStack.Navigator>
     </NavigationContainer>
   );
 };
